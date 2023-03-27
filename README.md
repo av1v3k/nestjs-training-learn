@@ -71,3 +71,22 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## How to generate Nest CRUD generate ?
+
+```bash
+#used for generating for REST API, GraphQL, Microservices, DTO, entities are generated
+$ nest g resourse products
+```
+
+This asks 2 questions to Choose 
+
+? What transport layer do you use?
+- REST API, GraphQL(code first), GraphQL(schema first), Microservice(non-HTTP), WebSockets
+
+? Would you like to generate CRUD entry points? Yes
+
+The above command would generate the methods associated with it.
+
+
