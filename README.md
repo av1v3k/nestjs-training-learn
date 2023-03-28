@@ -114,7 +114,12 @@ Request:
   - Request body - used mainly with @Post() to get the body payload with @Body()
 
 
+Async Response:
 
+- callbacks
+- Promises
+- using async and await
+- RxJS
 
 
 
