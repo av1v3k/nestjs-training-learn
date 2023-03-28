@@ -90,3 +90,32 @@ This asks 2 questions to Choose
 The above command would generate the methods associated with it.
 
 
+## Coding Style
+
+- Platform neutral or in lib specific way(Fastify / express)
+
+Response:
+
+- using @Res() decorator:
+
+```bash
+  @Get('listusers')
+  getUsers(@Res() response) {
+    response.status(200).json({ id: 1, name: 'some' });
+  }
+```
+
+Request:
+
+- Parameters:
+  - Path Example users/1
+  - Query Example ?a=45&b=55 NOTE: Query() decorator methods must be initiallized first
+- Payload
+  - Request body - used mainly with @Post() to get the body payload with @Body()
+
+
+
+
+
+
+
