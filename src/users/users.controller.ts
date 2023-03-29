@@ -9,7 +9,13 @@ import {
   Res,
   Body,
 } from '@nestjs/common';
+import { Observable, of } from 'rxjs';
 import { UsersService } from './users.service';
+
+export interface User {
+  name: string;
+  id: number;
+}
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) { }
@@ -22,6 +28,11 @@ export class UsersController {
   @Get('queryParams')
   findOneQuery(@Query() queryParams: string): any {
     return queryParams;
+  }
+
+  @Get('observableusers')
+  listUsers(): Observable<User[]> {
+    return of([{ name: 'asdf', id: 45 }]);
   }
 
   @Get(':id')

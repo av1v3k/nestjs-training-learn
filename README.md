@@ -117,9 +117,101 @@ Request:
 Async Response:
 
 - callbacks
-- Promises
+- Promises - use Promise type to declare the type to return
 - using async and await
-- RxJS
+- RxJS - use Observable type to declare the type to return
+
+
+Error handling:
+
+- use Built-in HttpException
+- this is the base for all exceptions. - BadRequestException, RequestTimeoutException. NotAcceptableException
+- use custom exceptions extending from HttpException.
+
+
+Customization of Error messages:
+
+- using Filters.
+- Check https://docs.nestjs.com/exception-filters#exception-filters-1
+
+Middleware:
+
+- It is a function which is called before the route handler.
+- Class Middleware, Function Middleware
+
+-------------------------------------------------------------------------------------------------------------
+
+Configuration
+Database
+Microservices
+
+
+## Configuration:
+
+```bash
+nest new config-app
+```
+
+How to read configration ?
+
+- via nodejs env variables.
+
+In command line, SET message=hello user
+
+```bash
+node index.js
+```
+
+- When above command in run, and access process.env.message, it outputs the message variable.
+
+OR
+
+## .env files
+
+- using dotenv package
+## Distributed config systems:
+
+consul.io
+Apache zookeeper
+
+- From NextJS configuration
+
+```bash
+npm install @nestjs/config
+```
+
+- NestJS uses dotenv internally
+- Need to inject config module in main module of NestJS
+
+```bash
+ConfigModule.forRoot({
+  envFilePath: '.development.env',
+});
+```
+
+```bash
+ConfigModule.forRoot({
+  isGlobal: true,
+});
+```
+
+```bash
+app.module.tsJS
+
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+})
+export class AppModule {}
+```
+
+NOTE:
+
+- https://docs.nestjs.com/techniques/configuration
+
+
 
 
 
