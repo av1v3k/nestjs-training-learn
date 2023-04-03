@@ -212,7 +212,74 @@ NOTE:
 - https://docs.nestjs.com/techniques/configuration
 
 
+## Database Integration
+
+ORMs for NodeJS
+
+1. https://mikro-orm.io/
+2. https://sequelize.org/
+3. https://typeorm.io/
+4. https://www.prisma.io/
+5. https://knexjs.org/
+
+Install typeORM in NodeJS
+
+```bash
+npm install @nestjs/typeorm typeorm mysql2
+```
+
+NOTE: For learning MySQL
+
+https://www.mysqltutorial.org/
 
 
+Design patterns for communicating to DB from ORM framework
 
+- Repository Pattern
+- Active Record Pattern
+
+TypeORM uses Repository pattern.
+
+- Define Entity
+- Define DTO
+
+Reference:
+
+- https://docs.nestjs.com/techniques/database#typeorm-integration
+- https://docs.nestjs.com/techniques/database#repository-pattern
+
+
+Microservices:
+
+```bash
+npm i @nestjs@microservices
+```
+
+NOTE: https://docs.nestjs.com/microservices/basics#getting-started
+
+
+GraphQL:
+
+- query - GET
+- mutation - POST, PUT, PATCH, DELETE
+- subscription - GET with streaming
+
+GraphQL Integration:
+
+ 1. API First, Schema implementation
+ 2. Schema First, API Implmentation
+
+- Schema implementation approach will see:
+
+1. /nestapps/microservices/ -> Under this directory execute the below command 
+
+```bash
+nest new graphqlapp
+```
+
+2. npm i @nestjs/graphql 
+
+- require SDL file or typedefs
+
+Schema First Approach:
 
